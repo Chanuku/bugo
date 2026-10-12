@@ -1,0 +1,181 @@
+<title>송유재 교수님 부고</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+  /* Layout: single narrow column like a folded paper notice; black ribbon at the top, quiet ink on paper */
+  :root {
+    --paper: #f7f7f5;
+    --card: #ffffff;
+    --ink: #1d1e20;
+    --ink-soft: #5b5e63;
+    --rule: #dcdcd8;
+    --mourn: #2a2b2e;
+    --mourn-fg: #f2f2ef;
+    --serif: "Nanum Myeongjo", "Noto Serif KR", "AppleMyungjo", "Batang", serif;
+    --sans: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #141516; --card: #1c1d1f; --ink: #e9e9e6; --ink-soft: #a3a5a9;
+      --rule: #34363a; --mourn: #e4e4e0; --mourn-fg: #17181a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #141516; --card: #1c1d1f; --ink: #e9e9e6; --ink-soft: #a3a5a9;
+    --rule: #34363a; --mourn: #e4e4e0; --mourn-fg: #17181a; color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.75;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+  .wrap {
+    max-width: 480px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 28px 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  header { display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; padding-top: 12px; }
+  .ribbon { width: 64px; height: auto; color: var(--mourn); }
+  .eyebrow {
+    font-family: var(--serif); font-size: 15px; letter-spacing: 0.6em; padding-left: 0.6em;
+    color: var(--ink-soft);
+  }
+  h1 {
+    margin: 0; font-family: var(--serif); font-weight: 800;
+    font-size: clamp(28px, 8vw, 34px); line-height: 1.35; text-wrap: balance;
+  }
+  h1 small { display: block; font-size: 0.5em; font-weight: 700; letter-spacing: 0.08em; color: var(--ink-soft); margin-top: 6px; }
+
+  .letter {
+    font-family: var(--serif); font-size: 16.5px; line-height: 1.95;
+    display: flex; flex-direction: column; gap: 1.1em;
+  }
+  .letter p { margin: 0; }
+
+  .rule { height: 1px; background: var(--rule); border: 0; margin: 0; }
+
+  .info {
+    background: var(--card); border: 1px solid var(--rule); border-radius: 4px;
+    padding: 22px 20px; display: flex; flex-direction: column; gap: 18px;
+  }
+  .info h2 {
+    margin: 0; font-family: var(--serif); font-size: 18px; font-weight: 800; letter-spacing: 0.04em;
+  }
+  dl { margin: 0; display: grid; grid-template-columns: 3.2em 1fr; row-gap: 14px; column-gap: 12px; }
+  dt { font-size: 13px; letter-spacing: 0.15em; color: var(--ink-soft); padding-top: 2px; }
+  dd { margin: 0; min-width: 0; font-weight: 500; line-height: 1.6; font-variant-numeric: tabular-nums; }
+  dd .sub { display: block; font-weight: 400; font-size: 14px; color: var(--ink-soft); }
+  .tbd { border-bottom: 1px dashed var(--ink-soft); }
+
+  .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .btn {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    min-height: 46px; padding: 0 12px; border-radius: 4px;
+    font: 500 14.5px/1.2 var(--sans); text-decoration: none; cursor: pointer;
+    border: 1px solid var(--rule); background: transparent; color: var(--ink);
+  }
+  .btn.primary { background: var(--mourn); color: var(--mourn-fg); border-color: var(--mourn); grid-column: 1 / -1; }
+  .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .btn:active { opacity: 0.8; }
+
+  .closing { text-align: center; display: flex; flex-direction: column; gap: 14px; }
+  .closing p { margin: 0; font-family: var(--serif); line-height: 1.9; color: var(--ink-soft); }
+  .closing .rip { font-size: 19px; font-weight: 800; color: var(--ink); letter-spacing: 0.06em; }
+
+  footer { text-align: center; display: flex; flex-direction: column; gap: 14px; }
+  footer .btn { width: 100%; }
+
+  .toast {
+    position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    transform: translateX(-50%); background: var(--mourn); color: var(--mourn-fg);
+    padding: 10px 18px; border-radius: 4px; font-size: 14px; white-space: nowrap;
+  }
+</style>
+
+<main class="wrap">
+  <header>
+    <svg class="ribbon" viewBox="0 0 64 72" aria-hidden="true">
+      <path d="M32 26 L14 70 L22 64 L28 70 L34 30 Z" fill="currentColor"/>
+      <path d="M32 26 L50 70 L42 64 L36 70 L30 30 Z" fill="currentColor" opacity="0.85"/>
+      <ellipse cx="20" cy="16" rx="14" ry="9" fill="none" stroke="currentColor" stroke-width="5"/>
+      <ellipse cx="44" cy="16" rx="14" ry="9" fill="none" stroke="currentColor" stroke-width="5"/>
+      <rect x="27" y="10" width="10" height="16" rx="2" fill="currentColor"/>
+    </svg>
+    <div class="eyebrow">訃 告</div>
+    <h1>송유재 교수님<small>부고 및 추모 모임 안내</small></h1>
+  </header>
+
+  <hr class="rule">
+
+  <section class="letter">
+    <p>송유재 교수님께서 2026년 9월 <span class="tbd">○</span>일, 심근경색으로 갑작스럽게 별세하셨습니다. 너무나 갑작스러운 이별이었습니다. 교수님께서는 아무런 말씀도 남기지 못하신 채 우리 곁을 떠나셨습니다.</p>
+    <p>황망한 마음으로 그동안 교수님의 연고자를 찾기 위해 여러 방면으로 노력하였으나 끝내 찾지 못해, 부득이하게 공공장례를 치르기로 하였습니다. 이에 별도의 사적인 장례 절차는 진행하지 않기로 하였습니다.</p>
+    <p>다만, 생전 교수님을 기억하고 추모하고자 하시는 제자와 동료, 선·후배 선생님들께서 함께 마음을 나누실 수 있도록 아래와 같이 추모 모임을 마련하였습니다.</p>
+    <p>이번 추모 모임에는 별도의 형식이나 정해진 진행 순서가 없습니다. 편안한 마음으로 찾아오셔서 각자의 방식으로 교수님을 추모하고, 교수님과 함께했던 소중한 기억과 이야기를 나누어주시면 감사하겠습니다.</p>
+  </section>
+
+  <section class="info" aria-labelledby="info-title">
+    <h2 id="info-title">추모 모임 안내</h2>
+    <dl>
+      <dt>일시</dt>
+      <dd>2026년 10월 16일 (금)<span class="sub">오후 3시 ~ 8시 · 자유롭게 방문</span></dd>
+      <dt>장소</dt>
+      <dd>이대서울병원 장례식장 <span class="tbd">○</span>호실<span class="sub" id="addr">서울 강서구 공항대로 260</span></dd>
+    </dl>
+    <div class="actions">
+      <a class="btn" href="https://map.naver.com/p/search/%EC%9D%B4%EB%8C%80%EC%84%9C%EC%9A%B8%EB%B3%91%EC%9B%90%20%EC%9E%A5%EB%A1%80%EC%8B%9D%EC%9E%A5" target="_blank" rel="noopener">네이버 지도</a>
+      <a class="btn" href="https://map.kakao.com/?q=%EC%9D%B4%EB%8C%80%EC%84%9C%EC%9A%B8%EB%B3%91%EC%9B%90%20%EC%9E%A5%EB%A1%80%EC%8B%9D%EC%9E%A5" target="_blank" rel="noopener">카카오맵</a>
+      <button class="btn primary" type="button" id="copy-addr">주소 복사</button>
+    </div>
+  </section>
+
+  <section class="closing">
+    <p>교수님과 함께했던 시간과 가르침을 기억하며,<br>교수님을 그리워하는 분들과<br>조용히 마음을 나누고자 합니다.</p>
+    <p class="rip">삼가 고인의 명복을 빕니다.</p>
+  </section>
+
+  <hr class="rule">
+
+  <footer>
+    <button class="btn" type="button" id="copy-link">부고 링크 복사</button>
+  </footer>
+</main>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+  const toast = document.getElementById('toast');
+  let t;
+  function show(msg) {
+    toast.textContent = msg; toast.hidden = false;
+    clearTimeout(t); t = setTimeout(() => { toast.hidden = true; }, 1800);
+  }
+  function copy(text, okMsg) {
+    const fallback = () => {
+      const ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      let ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+      ta.remove();
+      show(ok ? okMsg : text);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => show(okMsg), fallback);
+    } else fallback();
+  }
+  document.getElementById('copy-addr').addEventListener('click', () =>
+    copy('서울 강서구 공항대로 260 이대서울병원 장례식장', '주소를 복사했습니다'));
+  document.getElementById('copy-link').addEventListener('click', () =>
+    copy(location.href, '링크를 복사했습니다'));
+</script>
